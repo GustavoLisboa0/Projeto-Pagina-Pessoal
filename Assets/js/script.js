@@ -1,8 +1,8 @@
 const $ = (sel, root = document) => root.querySelector(sel);
 const reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-const CATEGORIAS = { ia: "IA & Automação", dados: "Dados & BI", web: "Web & Faculdade" };
-const ICONE_CATEGORIA = { ia: "bot", dados: "chart", web: "code" };
+const CATEGORIAS = { ia: "IA & Automação", dados: "Dados & BI", pessoal: "Projetos pessoais", web: "Faculdade" };
+const ICONE_CATEGORIA = { ia: "bot", dados: "chart", pessoal: "spark", web: "code" };
 
 const icone = (nome) => `<svg class="ic" aria-hidden="true"><use href="#i-${nome}"/></svg>`;
 

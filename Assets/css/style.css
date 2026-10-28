@@ -521,6 +521,7 @@ a { color: inherit; }
 .card__art--ia::after { background: var(--accent); }
 .card__art--dados::after { background: #5ab8f3; }
 .card__art--web::after { background: #f0a868; }
+.card__art--pessoal::after { background: #c3a6ff; }
 .card__art .ic { width: 34px; height: 34px; color: var(--text); position: relative; z-index: 1; }
 .card__art span {
     position: relative;

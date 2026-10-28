@@ -87,11 +87,29 @@ const PROJETOS = [
         links: []
     },
     {
+        id: "fisco",
+        titulo: "Fisco",
+        resumo: "Organizador financeiro pessoal: contas, transações, parcelamentos, investimentos e relatórios, com login Google e despesas divididas.",
+        categoria: "pessoal",
+        contexto: "Projeto pessoal · com Thiago Luiz · 2026",
+        tags: ["React", "TypeScript", "FastAPI", "PostgreSQL"],
+        capa: "",
+        video: null,
+        fotos: [],
+        descricao: [
+            "O Fisco é um organizador financeiro pessoal que desenvolvo em parceria com Thiago Luiz. Ele reúne contas, entradas e saídas por categoria, compras parceladas, investimentos e um dashboard com fluxo de caixa e relatórios.",
+            "É multiusuário: o login é feito com Google, só e-mails autorizados entram e cada pessoa vê apenas os próprios dados. Também dá para lançar uma despesa compartilhada e dividi-la entre os usuários.",
+            "O backend é FastAPI + SQLAlchemy, com migrations no Alembic e mais de 450 testes automatizados rodando no CI. O frontend é React + TypeScript (TanStack Start, Tailwind e shadcn/ui). Tudo roda na Vercel, com PostgreSQL no Neon.",
+            "Por ser uma ferramenta com login e dados financeiros, não tem acesso público nem código aberto."
+        ],
+        links: []
+    },
+    {
         id: "futebol-amador",
         titulo: "Gestão de Futebol Amador",
         resumo: "Aplicação para organizar as partidas mensais e as estatísticas do Suprema Corte FC, o time dos amigos.",
-        categoria: "web",
-        contexto: "Projeto acadêmico",
+        categoria: "pessoal",
+        contexto: "Projeto pessoal · Suprema Corte FC",
         tags: ["TypeScript", "Web", "Gestão"],
         capa: "",
         video: null,
