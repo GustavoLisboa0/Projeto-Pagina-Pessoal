@@ -191,7 +191,26 @@ a { color: inherit; }
     font: 600 1.05rem var(--font-display);
     text-decoration: none;
 }
-.nav__links { display: flex; align-items: center; gap: 4px; }
+.nav__links { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+
+.nav__actions { display: flex; align-items: center; gap: 8px; margin-left: 12px; }
+.nav__lang {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text);
+    font: 600 .85rem var(--font-mono);
+    letter-spacing: .04em;
+    cursor: pointer;
+    transition: color .2s, border-color .2s;
+}
+.nav__lang:hover { color: var(--accent); border-color: var(--accent); }
+.nav__lang .ic { width: 1.05em; height: 1.05em; }
 .nav__links a {
     padding: 10px 16px;
     border-radius: 999px;
@@ -444,6 +463,14 @@ a { color: inherit; }
 .card--destaque { grid-column: span 3; }
 .card--destaque .card__title { font-size: 1.55rem; }
 
+/* Card de linha inteira: mídia à esquerda, texto à direita */
+.card--largo { grid-column: 1 / -1; }
+.card--largo .card__btn { flex-direction: row; }
+.card--largo .card__media { flex: 0 0 58%; aspect-ratio: 16 / 10; }
+.card--largo .card__body { padding: 32px; justify-content: center; }
+.card--largo .card__title { font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+.card--largo .card__text { font-size: 1.02rem; }
+
 .card {
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
@@ -559,43 +586,6 @@ a { color: inherit; }
     color: #cfd3c4;
     white-space: nowrap;
 }
-
-/* Repositórios */
-.repos { margin-top: 64px; }
-.repos__head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 18px; }
-.repos__head h3 { font-size: 1.3rem; }
-.repos__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-}
-.repo a {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    height: 100%;
-    padding: 18px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    text-decoration: none;
-    transition: border-color .2s, background-color .2s;
-}
-.repo a:hover { border-color: var(--accent); background: var(--surface); }
-.repo__name { display: flex; align-items: center; gap: 8px; font-weight: 600; word-break: break-word; }
-.repo__desc { font-size: .88rem; color: var(--muted); }
-.repo__meta { font: .75rem var(--font-mono); color: var(--accent-dim); margin-top: auto; }
-.repo--skeleton {
-    height: 104px;
-    border-radius: var(--radius);
-    background: linear-gradient(90deg, var(--surface) 0%, var(--surface-2) 50%, var(--surface) 100%);
-    background-size: 200% 100%;
-    animation: shimmer 1.4s infinite;
-}
-@keyframes shimmer { to { background-position: -200% 0; } }
-.repo--erro { grid-column: 1 / -1; color: var(--muted); }
 
 /* ===== EXPERIÊNCIA ===== */
 
@@ -816,9 +806,9 @@ a { color: inherit; }
 /* ===== RESPONSIVO ===== */
 
 @media (max-width: 1024px) {
-    .repos__list { grid-template-columns: repeat(2, 1fr); }
     .projects { grid-template-columns: repeat(2, 1fr); }
     .card, .card--destaque { grid-column: span 1; }
+    .card--largo { grid-column: 1 / -1; }
     .curios__grid { grid-template-columns: repeat(2, 1fr); }
     .about { gap: 40px; }
 }
@@ -842,6 +832,11 @@ a { color: inherit; }
     .nav-aberto .nav__links { opacity: 1; transform: none; visibility: visible; }
     .nav__links a { padding: 14px 16px; font-size: 1.05rem; }
 
+    .nav__actions { margin-left: auto; }
+    .card--largo .card__btn { flex-direction: column; }
+    .card--largo .card__media { flex: none; }
+    .card--largo .card__body { padding: 22px 22px 24px; }
+
     .hero { grid-template-columns: 1fr; min-height: 0; padding-block: 40px 64px; gap: 40px; }
     .term { transform: none; }
 
@@ -862,7 +857,7 @@ a { color: inherit; }
 
 @media (max-width: 600px) {
     .wrap { padding-inline: 16px; }
-    .projects, .repos__list, .curios__grid { grid-template-columns: 1fr; }
+    .projects, .curios__grid { grid-template-columns: 1fr; }
     .stats strong { font-size: 1.7rem; }
     .stats > div { padding: 20px 16px; }
     .term__body { font-size: .8rem; padding: 18px; }

@@ -8,18 +8,42 @@
  * 2. Preencha no projeto:
  *    capa:   "Assets/Projetos/tcc-sentimento/capa.jpg"          -> imagem do card
  *    video:  { tipo: "youtube", id: "dQw4w9WgXcQ" }              -> vídeo do YouTube (id do link)
- *       ou   { tipo: "arquivo", src: "Assets/Projetos/tcc-sentimento/demo.mp4" }
+ *       ou   { tipo: "arquivo", src: "Assets/Projetos/tcc-sentimento/demo.mp4", poster: "...capa.jpg" }
  *    fotos:  [{ src: "Assets/Projetos/tcc-sentimento/1.jpg", alt: "Tela do dashboard" }, ...]
  * Dica: use imagens .webp/.jpg com até ~1600px de largura e vídeos .mp4 curtos (ou YouTube, que é mais leve).
+ *
+ * "largo: true" faz o card ocupar a linha inteira (use em um projeto só).
+ * A versão em inglês dos textos fica em data.en.js — ao mudar um texto aqui, atualize lá também.
  */
 
 const PROJETOS = [
+    {
+        id: "template-bi",
+        titulo: "Template de Dashboard BI",
+        resumo: "Dashboard de Business Intelligence com seis módulos — executivo, comercial, financeiro, estoque, logística e compras — e assistente de IA, sobre dados fictícios.",
+        categoria: "dados",
+        contexto: "Projeto pessoal · Template de dashboard",
+        largo: true,
+        tags: ["React", "TypeScript", "FastAPI", "Recharts", "BI"],
+        capa: "Assets/Projetos/template-bi/capa.jpg",
+        video: { tipo: "arquivo", src: "Assets/Projetos/template-bi/demo.mp4", poster: "Assets/Projetos/template-bi/capa.jpg" },
+        fotos: [
+            { src: "Assets/Projetos/template-bi/capa.jpg", alt: "Template BI no notebook e no celular, no módulo Executivo" }
+        ],
+        descricao: [
+            "Um template de dashboard de BI pensado para apresentação comercial: uma empresa fictícia (uma distribuidora B2B) com dados gerados de forma realista, pronta para mostrar a um cliente como ficaria o painel dele.",
+            "São seis módulos: Executivo (faturamento, margem, ticket médio, meta e projeção de fechamento), Comercial (vendas, clientes, reativação e potencial de recompra), Financeiro (fluxo de caixa, inadimplência e aging), Estoque e produtos (cobertura, giro e itens críticos), Logística (frete por transportadora, tempo até o despacho e pontualidade) e Compras (previsão de término do estoque, fornecedores e ordens de compra).",
+            "Todos os módulos têm filtro por período e origem de venda, comparativos com o período anterior e com o ano anterior, modo claro e escuro e layout pensado também para o celular. Um assistente de IA simulado gera os insights do período e responde perguntas sobre a tela.",
+            "O frontend é React + TypeScript com Tailwind e Recharts. A API em FastAPI entrega os dados no mesmo formato que a camada Gold de um PostgreSQL terá, então ligar a um banco real é só trocar o repositório — e o código de ETL (Bronze → Silver → Gold) já vem junto."
+        ],
+        links: []
+    },
     {
         id: "tcc-sentimento",
         titulo: "Análise de Sentimento em Redes Sociais",
         resumo: "TCC com IA: extração de dados da rede X, análise de sentimento, comunidades e bolhas sociais em um dashboard interativo.",
         categoria: "ia",
-        contexto: "TCC · Engenharia de Software",
+        contexto: "TCC · Inteligência artificial",
         destaque: true,
         tags: ["IA", "NLP", "Python", "Dashboard"],
         capa: "",
@@ -36,14 +60,14 @@ const PROJETOS = [
         titulo: "Automações com IA para CRMs",
         resumo: "Atendimento com IA, funil de vendas, captação, agendamento e follow-ups automáticos para clientes reais.",
         categoria: "ia",
-        contexto: "Bluelephant AI · 2025 – atual",
+        contexto: "Projeto profissional · Automação com IA",
         destaque: true,
         tags: ["Prompt Engineering", "n8n", "GoHighLevel", "Zatten"],
         capa: "",
         video: null,
         fotos: [],
         descricao: [
-            "Na Bluelephant AI implemento soluções completas de automação dentro do Zatten e do GoHighLevel, CRMs com IA integrada, para clientes de vários nichos.",
+            "Como AI Engineer, implemento soluções completas de automação dentro do Zatten e do GoHighLevel, CRMs com IA integrada, para clientes de vários nichos.",
             "Os fluxos cobrem atendimento com IA, funil de vendas, captação de leads, agendamento e integração com processos externos ao sistema.",
             "Também desenvolvi follow-ups automatizados com IA, que mantêm o relacionamento com leads e clientes de forma contínua e personalizada."
         ],
@@ -54,7 +78,7 @@ const PROJETOS = [
         titulo: "ETL e Dashboards de BI",
         resumo: "Pipeline de dados do ERP até dashboards de DRE, financeiro e comercial usados pela liderança.",
         categoria: "dados",
-        contexto: "Dwin Brindes · 2022 – 2025",
+        contexto: "Projeto profissional · ETL e BI",
         destaque: true,
         tags: ["SQL", "ETL", "Power BI", "Python"],
         capa: "",
@@ -72,14 +96,14 @@ const PROJETOS = [
         titulo: "Painel de Controle de Rotas",
         resumo: "App web da expedição: romaneio de pedidos, retiradas e rotas do dia no mapa, lendo direto do pipeline de dados.",
         categoria: "dados",
-        contexto: "Dwin Brindes · 2026",
+        contexto: "Projeto profissional · App de logística",
         destaque: true,
         tags: ["React", "FastAPI", "PostgreSQL", "Leaflet"],
         capa: "",
         video: null,
         fotos: [],
         descricao: [
-            "App web que a expedição da Dwin Brindes usa para planejar as entregas: quais pedidos saem, em qual rota, em que ordem e em que status está cada item.",
+            "App web que a equipe de expedição de uma empresa usa para planejar as entregas: quais pedidos saem, em qual rota, em que ordem e em que status está cada item.",
             "O romaneio separa os pedidos em grupos (do dia, adiantados, próximos envios e antigos), com filtros e alertas automáticos de evento, prazo curto e pedido sem data de envio.",
             "Na tela de rotas, cada parada aparece num mapa (Leaflet + OpenStreetMap): os endereços são geocodificados com cache, o trajeto é calculado com retorno à empresa e o motorista recebe links prontos para Google Maps e Waze.",
             "O backend em FastAPI lê a camada gold do pipeline de dados no PostgreSQL com um usuário de acesso restrito. Tudo o que o app grava fica num schema próprio, com histórico append-only. O frontend é React + Vite, com login, gestão de usuários e modo escuro."
@@ -91,7 +115,7 @@ const PROJETOS = [
         titulo: "Fisco",
         resumo: "Organizador financeiro pessoal: contas, transações, parcelamentos, investimentos e relatórios, com login Google e despesas divididas.",
         categoria: "pessoal",
-        contexto: "Projeto pessoal · com Thiago Luiz · 2026",
+        contexto: "Projeto pessoal · Finanças pessoais",
         tags: ["React", "TypeScript", "FastAPI", "PostgreSQL"],
         capa: "",
         video: null,
@@ -109,7 +133,7 @@ const PROJETOS = [
         titulo: "Gestão de Futebol Amador",
         resumo: "Aplicação para organizar as partidas mensais e as estatísticas do Suprema Corte FC, o time dos amigos.",
         categoria: "pessoal",
-        contexto: "Projeto pessoal · Suprema Corte FC",
+        contexto: "Projeto pessoal · Esporte",
         tags: ["TypeScript", "Web", "Gestão"],
         capa: "",
         video: null,

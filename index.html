@@ -9,6 +9,8 @@
     <meta property="og:title" content="Gustavo Lisboa · AI Engineer & Dados">
     <meta property="og:description" content="Automação com IA, engenharia de prompt, integrações e BI.">
     <link rel="icon" type="image/svg+xml" href="Assets/Ícones/logo-gl.svg">
+    <link rel="alternate" hreflang="pt-br" href="?lang=pt">
+    <link rel="alternate" hreflang="en" href="?lang=en">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,6 +32,7 @@
     <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
     <symbol id="i-image" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></symbol>
     <symbol id="i-bot" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></symbol>
@@ -39,27 +42,33 @@
     <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
     <symbol id="i-waves" viewBox="0 0 24 24"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></symbol>
     <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
-    <symbol id="i-spark"viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></symbol>
 </svg>
 
-<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<a class="skip-link" href="#conteudo" data-i18n="skip">Pular para o conteúdo</a>
 
 <header class="nav">
     <div class="nav__inner wrap">
-        <a href="#topo" class="nav__logo" aria-label="Início">
+        <a href="#topo" class="nav__logo" aria-label="Início" data-i18n-attr="aria-label:aria.inicio">
             <img src="Assets/Ícones/logo-gl.svg" alt="" width="32" height="32">
             <span>Gustavo Lisboa</span>
         </a>
-        <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">
-            <svg class="ic"><use href="#i-menu"/></svg>
-        </button>
-        <nav id="nav-links" class="nav__links" aria-label="Principal">
-            <a href="#sobre">Sobre</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#experiencia">Experiência</a>
-            <a href="#habilidades">Habilidades</a>
-            <a href="#contato">Contato</a>
+        <nav id="nav-links" class="nav__links" aria-label="Principal" data-i18n-attr="aria-label:aria.principal">
+            <a href="#sobre" data-i18n="nav.sobre">Sobre</a>
+            <a href="#projetos" data-i18n="nav.projetos">Projetos</a>
+            <a href="#experiencia" data-i18n="nav.experiencia">Experiência</a>
+            <a href="#habilidades" data-i18n="nav.habilidades">Habilidades</a>
+            <a href="#contato" data-i18n="nav.contato">Contato</a>
         </nav>
+        <div class="nav__actions">
+            <button class="nav__lang" type="button" id="btn-idioma" aria-label="Switch to English" title="Switch to English">
+                <svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg>
+                <span id="btn-idioma-sigla">EN</span>
+            </button>
+            <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu" data-i18n-attr="aria-label:aria.menu">
+                <svg class="ic"><use href="#i-menu"/></svg>
+            </button>
+        </div>
     </div>
 </header>
 
@@ -68,17 +77,17 @@
     <!-- HERO -->
     <section class="hero wrap">
         <div class="hero__text">
-            <p class="eyebrow"><span class="dot" aria-hidden="true"></span> AI Engineer na Bluelephant AI · Remoto</p>
-            <h1 class="hero__title">Eu transformo processos manuais em <span class="hl">automações com IA</span> e dados em decisões.</h1>
-            <p class="hero__lead">
+            <p class="eyebrow"><span class="dot" aria-hidden="true"></span> <span data-i18n="hero.eyebrow">AI Engineer na Bluelephant AI · Remoto</span></p>
+            <h1 class="hero__title" data-i18n="hero.titulo">Eu transformo processos manuais em <span class="hl">automações com IA</span> e dados em decisões.</h1>
+            <p class="hero__lead" data-i18n="hero.lead">
                 Sou Gustavo Lisboa, de Curitiba. Trabalho com engenharia de prompt, workflows em n8n, CRMs com IA
                 e BI — e estudo Engenharia de Software na UniCesumar.
             </p>
             <div class="hero__cta">
-                <a href="#projetos" class="btn btn--primary">Ver projetos <svg class="ic"><use href="#i-down"/></svg></a>
-                <a href="#contato" class="btn btn--ghost">Falar comigo</a>
+                <a href="#projetos" class="btn btn--primary"><span data-i18n="hero.cta1">Ver projetos</span> <svg class="ic"><use href="#i-down"/></svg></a>
+                <a href="#contato" class="btn btn--ghost" data-i18n="hero.cta2">Falar comigo</a>
             </div>
-            <ul class="socials" aria-label="Redes">
+            <ul class="socials" aria-label="Redes" data-i18n-attr="aria-label:aria.redes">
                 <li><a href="https://github.com/GustavoLisboa0" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-github"/></svg></a></li>
                 <li><a href="https://www.linkedin.com/in/gustavo-lisboa-cansian-pinto-7396b6307/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ic"><use href="#i-linkedin"/></svg></a></li>
                 <li><a href="mailto:glisboa.software@gmail.com" aria-label="E-mail"><svg class="ic"><use href="#i-mail"/></svg></a></li>
@@ -89,7 +98,7 @@
         <div class="hero__card" aria-hidden="true">
             <div class="term">
                 <div class="term__bar"><i></i><i></i><i></i><span>gustavo.json</span></div>
-<pre class="term__body"><code>{
+<pre class="term__body"><code data-i18n="hero.term">{
   <k>"nome"</k>: <s>"Gustavo Lisboa"</s>,
   <k>"cargo"</k>: <s>"AI Engineer"</s>,
   <k>"base"</k>: <s>"Curitiba, BR"</s>,
@@ -108,56 +117,56 @@
     </section>
 
     <!-- NÚMEROS -->
-    <section class="wrap stats reveal" aria-label="Destaques">
-        <div><strong>2022</strong><span>início em análise de dados</span></div>
-        <div><strong>2025</strong><span>AI Engineer em soluções de IA</span></div>
-        <div><strong>200</strong><span>alunos por turma em projetos de extensão como mentor</span></div>
-        <div><strong>B2</strong><span>inglês</span></div>
+    <section class="wrap stats reveal" aria-label="Destaques" data-i18n-attr="aria-label:aria.destaques">
+        <div><strong>2022</strong><span data-i18n="stats.1">início em análise de dados</span></div>
+        <div><strong>2025</strong><span data-i18n="stats.2">AI Engineer em soluções de IA</span></div>
+        <div><strong>200</strong><span data-i18n="stats.3">alunos por turma em projetos de extensão como mentor</span></div>
+        <div><strong>B2</strong><span data-i18n="stats.4">inglês</span></div>
     </section>
 
     <!-- SOBRE -->
     <section id="sobre" class="section wrap">
         <header class="section__head reveal">
-            <p class="kicker">01 — Quem sou eu</p>
-            <h2>Curioso, determinado e movido a desafios.</h2>
+            <p class="kicker" data-i18n="sobre.kicker">01 — Quem sou eu</p>
+            <h2 data-i18n="sobre.titulo">Curioso, determinado e movido a desafios.</h2>
         </header>
 
         <div class="about">
             <div class="about__text reveal">
-                <p>
+                <p data-i18n="sobre.p1">
                     Me chamo <strong>Gustavo Lisboa Cansian Pinto</strong> e nasci em Curitiba-PR. Comecei cedo, como estagiário,
                     reorganizando fluxos logísticos junto ao ERP de uma assistência técnica — e fui efetivado. Depois liderei a
                     transição de ERP na Dwin Brindes e, aos poucos, migrei para a análise de dados: ETL, SQL, Python e dashboards
                     de Power BI usados pela liderança para tomar decisões.
                 </p>
-                <p>
+                <p data-i18n="sobre.p2">
                     Hoje sou <strong>AI Engineer</strong> na Bluelephant AI, desenhando automações e integrações para clientes
                     de vários nichos: atendimento com IA, funil de vendas, agendamento e follow-ups automáticos.
                 </p>
-                <p>
+                <p data-i18n="sobre.p3">
                     Busco desafios que me façam crescer e quero impactar positivamente quem está ao meu redor — seja numa conversa
                     entre amigos ou num projeto profissional.
                 </p>
             </div>
 
-            <figure class="polaroids reveal" aria-label="Fotos minhas em diferentes fases">
+            <figure class="polaroids reveal" aria-label="Fotos minhas em diferentes fases" data-i18n-attr="aria-label:aria.fotos">
                 <div class="polaroid" style="--r:-6deg">
-                    <img src="Assets/Fotos/eu_kid.jpg" alt="Gustavo quando criança" loading="lazy" width="720" height="960">
-                    <figcaption>v0.1 · infância</figcaption>
+                    <img src="Assets/Fotos/eu_kid.jpg" alt="Gustavo quando criança" data-i18n-attr="alt:foto.1.alt" loading="lazy" width="720" height="960">
+                    <figcaption data-i18n="foto.1.legenda">v0.1 · infância</figcaption>
                 </div>
                 <div class="polaroid" style="--r:3deg">
-                    <img src="Assets/Fotos/eu_praia.jpg" alt="Gustavo adolescente na praia segurando uma prancha de bodyboard" loading="lazy" width="720" height="960">
-                    <figcaption>v1.0 · praia & bodyboard</figcaption>
+                    <img src="Assets/Fotos/eu_praia.jpg" alt="Gustavo adolescente na praia segurando uma prancha de bodyboard" data-i18n-attr="alt:foto.2.alt" loading="lazy" width="720" height="960">
+                    <figcaption data-i18n="foto.2.legenda">v1.0 · praia & bodyboard</figcaption>
                 </div>
                 <div class="polaroid" style="--r:-2deg">
-                    <img src="Assets/Fotos/eu_veio.jpg" alt="Gustavo hoje, em uma selfie no espelho" loading="lazy" width="720" height="960">
-                    <figcaption>v2.0 · versão atual</figcaption>
+                    <img src="Assets/Fotos/eu_veio.jpg" alt="Gustavo hoje, em uma selfie no espelho" data-i18n-attr="alt:foto.3.alt" loading="lazy" width="720" height="960">
+                    <figcaption data-i18n="foto.3.legenda">v2.0 · versão atual</figcaption>
                 </div>
             </figure>
         </div>
 
         <div class="curios reveal">
-            <h3 class="curios__title"><svg class="ic"><use href="#i-spark"/></svg> Curiosidades sobre mim</h3>
+            <h3 class="curios__title"><svg class="ic"><use href="#i-spark"/></svg> <span data-i18n="curios.titulo">Curiosidades sobre mim</span></h3>
             <ul class="curios__grid" id="curiosidades"></ul>
         </div>
     </section>
@@ -165,52 +174,40 @@
     <!-- PROJETOS -->
     <section id="projetos" class="section wrap">
         <header class="section__head reveal">
-            <p class="kicker">02 — Projetos</p>
-            <h2>O que eu já construí.</h2>
-            <p class="section__sub">Clique em um projeto para ver vídeo, fotos e os detalhes.</p>
+            <p class="kicker" data-i18n="projetos.kicker">02 — Projetos</p>
+            <h2 data-i18n="projetos.titulo">O que eu já construí.</h2>
+            <p class="section__sub" data-i18n="projetos.sub">Clique em um projeto para ver vídeo, fotos e os detalhes.</p>
         </header>
 
-        <div class="filters" role="group" aria-label="Filtrar projetos">
-            <button class="chip is-active" data-filter="todos" aria-pressed="true">Todos</button>
-            <button class="chip" data-filter="ia" aria-pressed="false">IA & Automação</button>
-            <button class="chip" data-filter="dados" aria-pressed="false">Dados & BI</button>
-            <button class="chip" data-filter="pessoal" aria-pressed="false">Projetos pessoais</button>
-            <button class="chip" data-filter="web" aria-pressed="false">Faculdade</button>
+        <div class="filters" role="group" aria-label="Filtrar projetos" data-i18n-attr="aria-label:aria.filtros">
+            <button class="chip is-active" data-filter="todos" aria-pressed="true" data-i18n="filtro.todos">Todos</button>
+            <button class="chip" data-filter="ia" aria-pressed="false" data-i18n="filtro.ia">IA & Automação</button>
+            <button class="chip" data-filter="dados" aria-pressed="false" data-i18n="filtro.dados">Dados & BI</button>
+            <button class="chip" data-filter="pessoal" aria-pressed="false" data-i18n="filtro.pessoal">Projetos pessoais</button>
+            <button class="chip" data-filter="web" aria-pressed="false" data-i18n="filtro.web">Faculdade</button>
         </div>
 
         <div class="projects" id="lista-projetos"></div>
-
-        <div class="repos reveal">
-            <div class="repos__head">
-                <h3>Repositórios no GitHub</h3>
-                <a href="https://github.com/GustavoLisboa0" target="_blank" rel="noopener" class="link">Ver perfil <svg class="ic"><use href="#i-arrow"/></svg></a>
-            </div>
-            <ul class="repos__list" id="repos" aria-live="polite">
-                <li class="repo repo--skeleton"></li>
-                <li class="repo repo--skeleton"></li>
-                <li class="repo repo--skeleton"></li>
-            </ul>
-        </div>
     </section>
 
     <!-- EXPERIÊNCIA -->
     <section id="experiencia" class="section wrap">
         <header class="section__head reveal">
-            <p class="kicker">03 — Trajetória</p>
-            <h2>De estagiário a AI Engineer.</h2>
+            <p class="kicker" data-i18n="exp.kicker">03 — Trajetória</p>
+            <h2 data-i18n="exp.titulo">De estagiário a AI Engineer.</h2>
         </header>
         <ol class="timeline" id="timeline"></ol>
 
         <div class="edu reveal">
             <div>
-                <p class="kicker">Formação</p>
-                <p><strong>Engenharia de Software (Bacharelado)</strong> — UniCesumar</p>
+                <p class="kicker" data-i18n="edu.formacao">Formação</p>
+                <p data-i18n="edu.curso"><strong>Engenharia de Software (Bacharelado)</strong> — UniCesumar</p>
             </div>
             <div>
-                <p class="kicker">Certificações</p>
+                <p class="kicker" data-i18n="edu.cert">Certificações</p>
                 <ul>
                     <li>Master Power BI — De A à Z, Udemy (2025)</li>
-                    <li>Curso de Dashboards no Power BI — CPB9 (2025)</li>
+                    <li data-i18n="edu.cert2">Curso de Dashboards no Power BI — CPB9 (2025)</li>
                     <li>Renault Transformation Day (2023)</li>
                 </ul>
             </div>
@@ -220,8 +217,8 @@
     <!-- HABILIDADES -->
     <section id="habilidades" class="section wrap">
         <header class="section__head reveal">
-            <p class="kicker">04 — Habilidades</p>
-            <h2>Ferramentas do dia a dia.</h2>
+            <p class="kicker" data-i18n="skills.kicker">04 — Habilidades</p>
+            <h2 data-i18n="skills.titulo">Ferramentas do dia a dia.</h2>
         </header>
         <div class="skills" id="skills"></div>
     </section>
@@ -229,12 +226,12 @@
     <!-- CONTATO -->
     <section id="contato" class="section wrap">
         <div class="contact reveal">
-            <p class="kicker">05 — Contato</p>
-            <h2>Tem um processo que dá pra automatizar?<br><span class="hl">Bora conversar.</span></h2>
+            <p class="kicker" data-i18n="contato.kicker">05 — Contato</p>
+            <h2 data-i18n="contato.titulo">Tem um processo que dá pra automatizar?<br><span class="hl">Bora conversar.</span></h2>
             <div class="contact__mail">
                 <a href="mailto:glisboa.software@gmail.com" class="contact__email">glisboa.software@gmail.com</a>
                 <button class="btn btn--ghost btn--sm" id="copiar-email" type="button">
-                    <svg class="ic"><use href="#i-copy"/></svg><span>Copiar</span>
+                    <svg class="ic"><use href="#i-copy"/></svg><span data-i18n="contato.copiar">Copiar</span>
                 </button>
             </div>
             <div class="contact__links">
@@ -249,13 +246,13 @@
 
 <footer class="footer wrap">
     <p>© <span id="ano"></span> Gustavo Lisboa</p>
-    <a href="#topo" class="link">Voltar ao topo ↑</a>
+    <a href="#topo" class="link" data-i18n="footer.topo">Voltar ao topo ↑</a>
 </footer>
 
 <!-- MODAL DO PROJETO -->
 <dialog class="modal" id="modal-projeto" aria-labelledby="modal-titulo">
     <div class="modal__box">
-        <button class="modal__close" type="button" aria-label="Fechar" data-close>
+        <button class="modal__close" type="button" aria-label="Fechar" data-i18n-attr="aria-label:aria.fechar" data-close>
             <svg class="ic"><use href="#i-x"/></svg>
         </button>
         <div class="modal__media" id="modal-media"></div>
@@ -273,6 +270,8 @@
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="Assets/js/data.js"></script>
+<script src="Assets/js/data.en.js"></script>
+<script src="Assets/js/i18n.js"></script>
 <script src="Assets/js/script.js"></script>
 </body>
 </html>
