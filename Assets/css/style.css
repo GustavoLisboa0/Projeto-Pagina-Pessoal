@@ -24,7 +24,9 @@
     --blue-rgb: 61, 123, 255;
     --bg-rgb: 11, 13, 18;
 
-    --font-display: "Space Grotesk", system-ui, sans-serif;
+    /* Teste: Righteous como substituta grátis da Herbus (geométrica, estilo Lubalin).
+       Para voltar à anterior, troque por "Space Grotesk". */
+    --font-display: "Righteous", "Space Grotesk", system-ui, sans-serif;
     --font-body: "Inter", system-ui, sans-serif;
     --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
@@ -73,9 +75,15 @@ img, video, iframe { display: block; max-width: 100%; }
 h1, h2, h3, h4 {
     font-family: var(--font-display);
     line-height: 1.1;
-    letter-spacing: -.02em;
+    letter-spacing: 0;
     margin: 0;
 }
+
+/* Righteous só tem um peso: evita o negrito falso que o navegador inventaria */
+h1, h2, h3, h4, .nav__logo, .stats strong, .contact__email { font-synthesis: none; }
+
+/* Títulos principais em caixa alta, como a Herbus (que não tem minúsculas) */
+.hero__title, .section__head h2, .contact h2 { text-transform: uppercase; letter-spacing: .01em; line-height: 1.05; }
 
 p { margin: 0 0 1em; }
 
