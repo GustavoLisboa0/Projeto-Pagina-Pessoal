@@ -24,9 +24,9 @@
     --blue-rgb: 61, 123, 255;
     --bg-rgb: 11, 13, 18;
 
-    /* Teste: Righteous como substituta grátis da Herbus (geométrica, estilo Lubalin).
-       Para voltar à anterior, troque por "Space Grotesk". */
-    --font-display: "Righteous", "Space Grotesk", system-ui, sans-serif;
+    /* Teste de fontes grátis parecidas com a Herbus. Opções já carregadas no index.html:
+       "Syncopate" (atual), "Righteous" ou a original "Space Grotesk". */
+    --font-display: "Syncopate", "Space Grotesk", system-ui, sans-serif;
     --font-body: "Inter", system-ui, sans-serif;
     --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
@@ -78,12 +78,6 @@ h1, h2, h3, h4 {
     letter-spacing: 0;
     margin: 0;
 }
-
-/* Righteous só tem um peso: evita o negrito falso que o navegador inventaria */
-h1, h2, h3, h4, .nav__logo, .stats strong, .contact__email { font-synthesis: none; }
-
-/* Títulos principais em caixa alta, como a Herbus (que não tem minúsculas) */
-.hero__title, .section__head h2, .contact h2 { text-transform: uppercase; letter-spacing: .01em; line-height: 1.05; }
 
 p { margin: 0 0 1em; }
 
@@ -822,6 +816,31 @@ a { color: inherit; }
 
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
 .reveal.is-in { opacity: 1; transform: none; }
+
+/* ===== FONTE DOS TÍTULOS (teste Syncopate) =====
+   Syncopate é larga e suas minúsculas misturam formas de caixa alta e baixa:
+   títulos todos em maiúsculas e um pouco menores. Para voltar, troque --font-display
+   no topo e apague este bloco. */
+
+h1, h2, h3, h4, .nav__logo, .stats strong { font-synthesis: none; text-transform: uppercase; }
+.hero__title, .section__head h2, .contact h2 { letter-spacing: .01em; line-height: 1.08; }
+.hero__title { font-size: clamp(1.45rem, 3.3vw, 2.5rem); }
+.section__head h2 { font-size: clamp(1.6rem, 3.2vw, 2.4rem); }
+.contact h2 { font-size: clamp(1.5rem, 3.4vw, 2.5rem); }
+.stats strong { font-size: 1.8rem; }
+.card__title, .tl__body h3, .skill h3, .curio h4, .curios__title { letter-spacing: .02em; }
+.card__title { font-size: 1.1rem; }
+.card--destaque .card__title { font-size: 1.3rem; }
+.card--largo .card__title { font-size: clamp(1.3rem, 2.2vw, 1.7rem); }
+.nav__logo { font-size: .95rem; }
+.contact__email { font-family: var(--font-body); }
+@media (max-width: 600px) {
+    .nav__logo { font-size: .8rem; }
+    .stats strong { font-size: 1.5rem; }
+}
+@media (max-width: 400px) {
+    .nav__logo span { display: none; }
+}
 
 /* ===== RESPONSIVO ===== */
 
