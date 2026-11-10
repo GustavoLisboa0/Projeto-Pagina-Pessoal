@@ -1,28 +1,28 @@
 /* ===== TOKENS ===== */
 
 :root {
-    /* Neutros: cinza frio com leve fundo azulado */
-    --bg: #0b0d12;
-    --surface: #12151c;
-    --surface-2: #181c25;
-    --border: #252a35;
-    --border-strong: #353c4a;
+    /* Neutros: azul-marinho (#191a38) com cinzas azulados */
+    --bg: #12132b;
+    --surface: #191a38;
+    --surface-2: #202247;
+    --border: #2b2d58;
+    --border-strong: #3b3e70;
     --text: #f5f7fa;
-    --text-2: #d3d8e1;
-    --muted: #9aa3b2;
+    --text-2: #d6d8ea;
+    --muted: #a2a5c4;
 
     /* Acento lima */
     --accent: #c8ff00;
     --accent-hover: #b9fc01;
     --accent-dim: #b9fc01;
     --accent-rgb: 200, 255, 0;
-    --on-accent: #0b0d12;
+    --on-accent: #12132b;
 
     /* Azul de apoio */
     --blue: #3d7bff;
     --blue-soft: #8ab0ff;
     --blue-rgb: 61, 123, 255;
-    --bg-rgb: 11, 13, 18;
+    --bg-rgb: 18, 19, 43;
 
     /* Teste: Righteous como substituta grátis da Herbus (geométrica, estilo Lubalin).
        Para voltar à anterior, troque por "Space Grotesk". */
@@ -739,7 +739,7 @@ a { color: inherit; }
     color: var(--text);
     overflow: auto;
 }
-.modal::backdrop { background: rgba(4, 5, 8, .78); backdrop-filter: blur(4px); }
+.modal::backdrop { background: rgba(8, 9, 24, .78); backdrop-filter: blur(4px); }
 .modal[open] { animation: modal-in .28s var(--ease); }
 @keyframes modal-in { from { opacity: 0; transform: translateY(16px) scale(.98); } }
 
