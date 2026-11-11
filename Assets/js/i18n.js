@@ -15,6 +15,7 @@ const TEXTOS_EN = {
     "aria.filtros": "Filter projects",
     "aria.fotos": "Photos of me at different stages",
     "aria.fechar": "Close",
+    "aria.outrosProjetos": "Other projects",
 
     "nav.sobre": "About",
     "nav.projetos": "Projects",
@@ -100,6 +101,8 @@ const UI = {
         videoTitulo: "Vídeo do projeto",
         foto: "Foto",
         mostrar: "Mostrar",
+        anterior: "Anterior",
+        proximo: "Próximo",
         emBreve: "Vídeo e fotos em breve",
         emailCopiado: "E-mail copiado!"
     },
@@ -116,6 +119,8 @@ const UI = {
         videoTitulo: "Project video",
         foto: "Photo",
         mostrar: "Show",
+        anterior: "Previous",
+        proximo: "Next",
         emBreve: "Video and photos coming soon",
         emailCopiado: "Email copied!"
     }

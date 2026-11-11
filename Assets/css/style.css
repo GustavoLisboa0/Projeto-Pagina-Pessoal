@@ -803,6 +803,17 @@ a { color: inherit; }
 .modal__desc p { color: var(--text-2); font-size: 1.02rem; max-width: 68ch; }
 .modal__links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
 
+.modal__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+.modal__pos { font: .8rem var(--font-mono); color: var(--muted); }
+
 /* ===== TOAST ===== */
 
 .toast {

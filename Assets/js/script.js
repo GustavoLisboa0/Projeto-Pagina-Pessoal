@@ -158,9 +158,22 @@ function miniatura(item) {
     return item.src;
 }
 
+// Projetos por onde as setas do modal passam: os do filtro ativo (ou todos, se o aberto não estiver nele)
+let idAberto = null;
+
+function vizinhos(id) {
+    const todos = projetos();
+    const doFiltro = todos.filter((p) => filtroAtual === "todos" || p.categoria === filtroAtual);
+    const lista = doFiltro.some((p) => p.id === id) ? doFiltro : todos;
+    const i = lista.findIndex((p) => p.id === id);
+    const total = lista.length;
+    return { anterior: lista[(i - 1 + total) % total], proximo: lista[(i + 1) % total], posicao: i + 1, total };
+}
+
 function abrirProjeto(id) {
     const p = projetos().find((proj) => proj.id === id);
     if (!p) return;
+    idAberto = id;
 
     const itens = [];
     if (p.video) itens.push(p.video);
@@ -196,7 +209,18 @@ function abrirProjeto(id) {
     $("#modal-desc").innerHTML = p.descricao.map((par) => `<p>${escapar(par)}</p>`).join("");
     $("#modal-links").innerHTML = (p.links || []).map(linkProjeto).join("");
 
-    modal.showModal();
+    const { anterior, proximo, posicao, total } = vizinhos(id);
+    $("#modal-nav").hidden = total < 2;
+    $("#modal-ant").dataset.ir = anterior.id;
+    $("#modal-ant").setAttribute("aria-label", `${t("anterior")}: ${anterior.titulo}`);
+    $("#modal-ant span").textContent = t("anterior");
+    $("#modal-prox").dataset.ir = proximo.id;
+    $("#modal-prox").setAttribute("aria-label", `${t("proximo")}: ${proximo.titulo}`);
+    $("#modal-prox span").textContent = t("proximo");
+    $("#modal-pos").textContent = `${posicao} / ${total}`;
+
+    if (modal.open) modal.scrollTop = 0; // trocou de projeto com o modal aberto
+    else modal.showModal();
     document.body.classList.add("sem-scroll");
     history.replaceState(null, "", `#projeto-${p.id}`);
 }
@@ -206,13 +230,23 @@ function fecharModal() {
 }
 
 modal.addEventListener("close", () => {
+    idAberto = null;
     $("#modal-media").innerHTML = ""; // para vídeos que estiverem tocando
     document.body.classList.remove("sem-scroll");
     history.replaceState(null, "", location.pathname + location.search);
 });
 
 modal.addEventListener("click", (e) => {
-    if (e.target === modal || e.target.closest("[data-close]")) fecharModal();
+    const ir = e.target.closest("[data-ir]");
+    if (ir) abrirProjeto(ir.dataset.ir);
+    else if (e.target === modal || e.target.closest("[data-close]")) fecharModal();
+});
+
+// Setas do teclado trocam de projeto (menos dentro do vídeo, onde elas avançam o vídeo)
+modal.addEventListener("keydown", (e) => {
+    if (e.target.closest("video, iframe") || e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.key === "ArrowLeft") $("#modal-ant").click();
+    if (e.key === "ArrowRight") $("#modal-prox").click();
 });
 
 /* ---------- OUTRAS SEÇÕES ---------- */
