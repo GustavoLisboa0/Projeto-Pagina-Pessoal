@@ -57,6 +57,16 @@ function aplicarTextosFixos() {
     $("#btn-idioma-sigla").textContent = t("siglaOutroIdioma");
 
     definirMenu(menuAberto()); // rótulo do botão do menu no idioma atual
+    contarFiltros(); // o texto dos filtros acabou de ser reescrito
+}
+
+// Quantos projetos cada filtro tem, ao lado do nome
+function contarFiltros() {
+    document.querySelectorAll(".filters .chip").forEach((chip) => {
+        const filtro = chip.dataset.filter;
+        const n = PROJETOS.filter((p) => filtro === "todos" || p.categoria === filtro).length;
+        chip.insertAdjacentHTML("beforeend", ` <span class="chip__n">${n}</span>`);
+    });
 }
 
 function mudarIdioma(novo) {

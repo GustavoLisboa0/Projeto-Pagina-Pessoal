@@ -471,6 +471,7 @@ a { color: inherit; }
 }
 .chip:hover { color: var(--text); border-color: var(--muted); }
 .chip.is-active { background: var(--text); border-color: var(--text); color: var(--bg); }
+.chip__n { margin-left: 4px; font: .78rem var(--font-mono); opacity: .65; }
 
 /* 6 colunas: destaques ocupam metade (2 por linha), os demais um terço */
 .projects {
