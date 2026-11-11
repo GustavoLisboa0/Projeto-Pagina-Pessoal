@@ -55,6 +55,8 @@ function aplicarTextosFixos() {
     botao.setAttribute("aria-label", t("trocarIdioma"));
     botao.title = t("trocarIdioma");
     $("#btn-idioma-sigla").textContent = t("siglaOutroIdioma");
+
+    definirMenu(menuAberto()); // rótulo do botão do menu no idioma atual
 }
 
 function mudarIdioma(novo) {
@@ -309,16 +311,28 @@ $("#copiar-email").addEventListener("click", async () => {
 
 $("#btn-idioma").addEventListener("click", () => mudarIdioma(idioma === "pt" ? "en" : "pt"));
 
+// Menu do celular: abre/fecha pelo botão; fecha ao escolher um link, tocar fora ou apertar Esc
 const navToggle = $(".nav__toggle");
-navToggle.addEventListener("click", () => {
-    const aberto = navToggle.getAttribute("aria-expanded") === "true";
-    navToggle.setAttribute("aria-expanded", !aberto);
-    document.body.classList.toggle("nav-aberto", !aberto);
-});
+const menuAberto = () => navToggle.getAttribute("aria-expanded") === "true";
+
+function definirMenu(aberto) {
+    navToggle.setAttribute("aria-expanded", aberto);
+    navToggle.setAttribute("aria-label", t(aberto ? "fecharMenu" : "abrirMenu"));
+    $("use", navToggle).setAttribute("href", aberto ? "#i-x" : "#i-menu");
+    document.body.classList.toggle("nav-aberto", aberto);
+}
+
+navToggle.addEventListener("click", () => definirMenu(!menuAberto()));
 $("#nav-links").addEventListener("click", (e) => {
-    if (e.target.closest("a")) {
-        navToggle.setAttribute("aria-expanded", "false");
-        document.body.classList.remove("nav-aberto");
+    if (e.target.closest("a")) definirMenu(false);
+});
+document.addEventListener("click", (e) => {
+    if (menuAberto() && !e.target.closest(".nav")) definirMenu(false);
+});
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && menuAberto()) {
+        definirMenu(false);
+        navToggle.focus();
     }
 });
 
