@@ -439,9 +439,7 @@ a { color: inherit; }
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background: var(--surface);
-    transition: border-color .2s, transform .25s var(--ease);
 }
-.curio:hover { border-color: var(--border-strong); transform: translateY(-3px); }
 .curio__icon {
     display: grid;
     place-items: center;
