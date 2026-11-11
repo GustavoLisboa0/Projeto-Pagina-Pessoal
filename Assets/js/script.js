@@ -187,10 +187,12 @@ function vizinhos(id) {
     return { anterior: lista[(i - 1 + total) % total], proximo: lista[(i + 1) % total], posicao: i + 1, total };
 }
 
-function abrirProjeto(id) {
+// modo: "push" (clique no card), "inicial" (link direto ao carregar) ou "nenhum" (o histórico já está certo)
+function abrirProjeto(id, modo = "push") {
     const p = projetos().find((proj) => proj.id === id);
     if (!p) return;
     idAberto = id;
+    const estavaAberto = modal.open;
 
     const itens = [];
     if (p.video) itens.push(p.video);
@@ -239,7 +241,15 @@ function abrirProjeto(id) {
     if (modal.open) modal.scrollTop = 0; // trocou de projeto com o modal aberto
     else modal.showModal();
     document.body.classList.add("sem-scroll");
-    history.replaceState(null, "", `#projeto-${p.id}`);
+
+    // Abrir cria uma entrada no histórico, para o "voltar" do navegador/celular fechar o projeto
+    // em vez de sair do site. Trocar de projeto com o modal aberto só atualiza essa entrada.
+    if (modo !== "nenhum") {
+        const inicial = modo === "inicial" || Boolean(estavaAberto && history.state && history.state.inicial);
+        const estado = { projeto: p.id, inicial };
+        if (estavaAberto || inicial) history.replaceState(estado, "", `#projeto-${p.id}`);
+        else history.pushState(estado, "", `#projeto-${p.id}`);
+    }
 }
 
 function fecharModal() {
@@ -250,7 +260,19 @@ modal.addEventListener("close", () => {
     idAberto = null;
     $("#modal-media").innerHTML = ""; // para vídeos que estiverem tocando
     document.body.classList.remove("sem-scroll");
-    history.replaceState(null, "", location.pathname + location.search);
+
+    // Fechou pelo X/Esc/fundo: desfaz a entrada criada ao abrir. (Se fechou pelo "voltar", ela já saiu.)
+    const estado = history.state;
+    if (estado && estado.projeto) {
+        if (estado.inicial) history.replaceState(null, "", location.pathname + location.search);
+        else history.back();
+    }
+});
+
+window.addEventListener("popstate", (e) => {
+    const id = e.state && e.state.projeto;
+    if (id) abrirProjeto(id, "nenhum");
+    else if (modal.open) modal.close();
 });
 
 modal.addEventListener("click", (e) => {
@@ -415,4 +437,4 @@ $("#lista-projetos").addEventListener("click", (e) => {
 });
 
 // Link direto para um projeto: index.html#projeto-tcc-sentimento
-if (location.hash.startsWith("#projeto-")) abrirProjeto(location.hash.replace("#projeto-", ""));
+if (location.hash.startsWith("#projeto-")) abrirProjeto(location.hash.replace("#projeto-", ""), "inicial");
