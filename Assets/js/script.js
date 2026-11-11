@@ -56,6 +56,11 @@ function aplicarTextosFixos() {
     botao.title = t("trocarIdioma");
     $("#btn-idioma-sigla").textContent = t("siglaOutroIdioma");
 
+    // WhatsApp já abre com uma mensagem pronta, no idioma da página
+    document.querySelectorAll("[data-whats]").forEach((a) => {
+        a.href = `https://wa.me/5541984494072?text=${encodeURIComponent(t("whatsMsg"))}`;
+    });
+
     definirMenu(menuAberto()); // rótulo do botão do menu no idioma atual
     contarFiltros(); // o texto dos filtros acabou de ser reescrito
 }
