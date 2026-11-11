@@ -510,6 +510,10 @@ a { color: inherit; }
     width: 100%;
     cursor: pointer;
 }
+/* Links do projeto (site, GitHub) direto no card, abaixo do botão */
+.card { display: flex; flex-direction: column; }
+.card__btn { flex: 1; height: auto; }
+.card__links { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 22px 22px; }
 .card__btn:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: var(--radius-lg); }
 
 .card__media {

@@ -86,6 +86,12 @@ function capaDoProjeto(p) {
     return "";
 }
 
+const ICONE_LINK = { GitHub: "github" };
+
+function linkProjeto(l) {
+    return `<a class="btn btn--ghost btn--sm" href="${escapar(l.url)}" target="_blank" rel="noopener">${icone(ICONE_LINK[l.rotulo] || "arrow")} ${escapar(t("rotulos")[l.rotulo] || l.rotulo)}</a>`;
+}
+
 function cardProjeto(p) {
     const capa = capaDoProjeto(p);
     const midia = capa
@@ -93,6 +99,10 @@ function cardProjeto(p) {
         : `<div class="card__art card__art--${p.categoria}">${icone(ICONE_CATEGORIA[p.categoria])}<span>${t("categorias")[p.categoria]}</span></div>`;
     const temVideo = p.video ? `<span class="card__badge">${icone("play")} ${t("video")}</span>` : "";
     const tamanho = p.largo ? "card--largo" : p.destaque ? "card--destaque" : "";
+    // Links ficam fora do botão do card: link dentro de botão não é HTML válido
+    const links = (p.links || []).length
+        ? `<div class="card__links">${p.links.map(linkProjeto).join("")}</div>`
+        : "";
 
     return `
         <article class="card ${tamanho} reveal" data-categoria="${p.categoria}">
@@ -106,6 +116,7 @@ function cardProjeto(p) {
                     <span class="card__more">${t("verDetalhes")} ${icone("arrow")}</span>
                 </div>
             </button>
+            ${links}
         </article>`;
 }
 
@@ -183,9 +194,7 @@ function abrirProjeto(id) {
     $("#modal-titulo").textContent = p.titulo;
     $("#modal-tags").innerHTML = p.tags.map((tag) => `<li>${escapar(tag)}</li>`).join("");
     $("#modal-desc").innerHTML = p.descricao.map((par) => `<p>${escapar(par)}</p>`).join("");
-    $("#modal-links").innerHTML = (p.links || []).map((l) =>
-        `<a class="btn btn--ghost btn--sm" href="${escapar(l.url)}" target="_blank" rel="noopener">${escapar(t("rotulos")[l.rotulo] || l.rotulo)} ${icone("arrow")}</a>`
-    ).join("");
+    $("#modal-links").innerHTML = (p.links || []).map(linkProjeto).join("");
 
     modal.showModal();
     document.body.classList.add("sem-scroll");
