@@ -46,8 +46,8 @@ const PROJETOS = [
         contexto: "TCC · Inteligência artificial",
         destaque: true,
         tags: ["IA", "NLP", "Python", "Dashboard"],
-        capa: "",
-        video: null,
+        capa: "Assets/Projetos/tcc-sentimento/capa.jpg",
+        video: { tipo: "arquivo", src: "Assets/Projetos/tcc-sentimento/demo.mp4", poster: "Assets/Projetos/tcc-sentimento/capa.jpg" },
         fotos: [],
         descricao: [
             "Meu Trabalho de Conclusão de Curso: um sistema que coleta publicações da rede X e usa IA para classificar o sentimento de cada uma.",
